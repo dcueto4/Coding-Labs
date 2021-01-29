@@ -70,12 +70,12 @@ public class Main {
 					
 				switch(loyaltyMemberStatus) {
 				case "SILVER":
-					loyaltyMemberDiscount = .1;
+					loyaltyMemberDiscount = .10;
 					break;
 				case "GOLD":
 					loyaltyMemberDiscount = .15;
 					break;
-				case "PLATIUM":
+				case "PLATINUM":
 					loyaltyMemberDiscount = .25;
 					break;
 					
@@ -86,29 +86,66 @@ public class Main {
 				
 				
 				//create a variable called billTotal and assign a value
-				//create a variable called adjustedTotal and assign it the billTotal minus the loyaltyMemberDisount percent of the billTotal
+				//create a variable called adjustedTotal and assign it the billTotal minus the loyaltyMemberDiscount percent of the billTotal
 				//if the adjustedBillTotal is greater than $500 upgrade the loyaltyMemberStatus from SILVER to GOLD or GOLD to PLATINUM
-				double billTotal = 40.50;
-				double adjusstedTotal = billTotal - loyalMemberDiscount * billTotal;
+				double billTotal = 640.50;
+				double adjustedTotal = billTotal - loyaltyMemberDiscount * billTotal;
 				System.out.println(adjustedTotal);
+				
+				if (adjustedTotal > 500) {
+					if (loyaltyMemberStatus == "SILVER") {
+						loyaltyMemberStatus = "GOLD";
+					} else if (loyaltyMemberStatus == "GOLD") {
+						loyaltyMemberStatus = "PLATNIUM";
+					}
+				}
+					
+				System.out.println(loyaltyMemberStatus);
+					
+				
 				
 				//create two variables, username and password
 				//create a conditional that prints "login successful" if the username is "Tommy123" and the password is "12345"
 				//otherwise, print "access denied"
+				String username = "Tommy123";
+				String password = "12345";
 				
+				if (username.equals("Tommy123") && password.equals("12345")) {
+					System.out.println("login sucessful");
+				}   else { System.out.println("access denied");
+				
+				}
+					
 				
 				
 				//write a for loop that prints each number from 0 to 9
+				for (int i = 0; i < 10; i++) {
+					System.out.println(i);
+				}
 				//write a for loop that prints each number from 10 to 0 backwards
+				for (int i = 10; i >= 0; i--) {
+					System.out.println(i);
+				}
 				
 				//write a for loop that prints every other number from 0 to 100
+				for (int i = 0; i <= 100; i += 2) {
+					System.out.println(i);
+				}
 				
 				//write a for loop that iterates from 0 to 100 and prints "EVEN" if the number is even and "ODD" if it's odd
-				
+				for (int i=0; i <= 100; i++)
+					if (i % 2 == 0) {
+						System.out.println("EVEN");
+					} else {
+						System.out.println("ODD");
+					}
 				//write a while loop that starts at 100 and iterates backwards by 1 until it reaches 0
-		
 				//divide each number by 3 and print the remainder to the console
-
+				int i = 100;
+				while (i > 0) {
+					System.out.println(i + " " + (i % 3));
+					i--;
+				}
 	}
 
 }
